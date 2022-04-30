@@ -1,0 +1,15 @@
+.bg-naranja {
+    background-color: #fb8500;
+}
+
+a.nav-link {
+    margin-left: 1rem;
+    padding: 0.5rem;
+}
+
+a.nav-link:hover {
+    /* color: #e0e1dd !important; */
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+

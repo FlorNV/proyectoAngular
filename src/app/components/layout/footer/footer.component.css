@@ -1,0 +1,38 @@
+.bg-gris {
+    background-color: #e0e1dd;
+}
+
+footer a {
+    text-decoration: none;
+    color: #888;
+}
+
+.columna {
+    margin-left: 4rem;
+}
+
+.red-social-group {
+    margin-top: 2rem;
+}
+
+.red-social-item {
+    margin-right: 1rem !important;
+}
+
+.list-item {
+    line-height: 2;
+}
+
+footer a:hover {
+    color: #000;
+}
+
+footer p {
+    color: #888;
+    text-align: center;
+}
+
+hr {
+    border-top: 1px solid #888;
+    margin: 0 2rem 1rem;
+} 

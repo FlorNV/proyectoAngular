@@ -1,0 +1,83 @@
+ div.margen {
+    padding-top: 8rem;
+    padding-bottom: 3.5rem;
+}
+
+/*SIN CAROUSEL*/
+
+.imagen {
+    width: 90%;
+    height: 30rem;
+    object-fit: cover;
+}
+
+.noticia-contenido {
+    width: 90%;
+    padding: 1rem 3.2rem 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.noticia-contenido h3 {
+    font-size: 1.4rem;
+}
+
+.btn-container {
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-container button.btn {
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
+    color: #888;
+}
+
+.btn-container button.btn:hover {
+    color: #fff;
+}
+
+
+
+/*CON CAROUSEL*/
+
+
+.carousel img {
+    height: 30rem;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: start;
+    padding: 1rem 6rem 0.5rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.8) 100%);
+}
+
+.carousel h3 {
+    font-size: 1.5rem;
+    transition-property: color;
+    transition-duration: .2s;
+}
+
+.carousel .carousel-control-prev:hover {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.5) 100%);
+
+}
+
+.carousel .carousel-control-next:hover {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0.5) 100%);
+}
+
+.carousel-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.carousel-caption a:hover h3 {
+    color: #fb8500;
+}

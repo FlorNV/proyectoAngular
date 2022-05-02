@@ -1,48 +1,7 @@
- div.margen {
+ div.padding {
     padding-top: 8rem;
     padding-bottom: 3.5rem;
 }
-
-/*SIN CAROUSEL*/
-
-.imagen {
-    width: 90%;
-    height: 30rem;
-    object-fit: cover;
-}
-
-.noticia-contenido {
-    width: 90%;
-    padding: 1rem 3.2rem 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #fff;
-}
-
-.noticia-contenido h3 {
-    font-size: 1.4rem;
-}
-
-.btn-container {
-    width: 88%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn-container button.btn {
-    border-radius: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-color: transparent;
-    color: #888;
-}
-
-.btn-container button.btn:hover {
-    color: #fff;
-}
-
-
-
-/*CON CAROUSEL*/
-
 
 .carousel img {
     height: 30rem;

@@ -1,0 +1,54 @@
+div.padding {
+    padding: 8rem 2rem 3.5rem;
+}
+
+.imagen {
+    border: 0.8rem outset #7f4f24;
+    border-radius: 3%;
+    box-shadow: 0 0.5rem 1rem 0.4rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.imagen img {
+    width: 20rem;
+    object-fit: cover;
+}
+
+p.intentos {
+    top: 2% !important;
+    font-weight: 600;
+}
+
+p.intentos span {
+    padding: 0.2rem 0.6rem;
+    border-radius: 100%;
+    background-color: #fb8500;
+    color: #000 !important;
+}
+
+p.palabra-oculta span {
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-letra {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.btn-reiniciar, .btn-letra {
+    background-color: #fb8500;
+    border: none;
+    color: #fff;
+    transition: background-color 0.5s ease;
+}
+
+.btn-reiniciar {
+    padding: 0.6rem 2rem;
+    margin-top: 1rem !important;
+}
+
+.btn-reiniciar:hover, .btn-letra:hover {
+    background-color: #e85d04;
+}
+

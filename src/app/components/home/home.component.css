@@ -2,3 +2,55 @@
     padding-top: 8rem;
     padding-bottom: 3.5rem;
 }
+
+.noticias .card {
+    height: 100%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.noticias .card img {
+    height: 75%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.noticias .card-body {
+    height: 25%;
+}
+
+.noticias .card-body p {
+    color: #fff;
+    transition: color .3s;
+}
+
+.aside {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    padding: 0 2rem;
+}
+
+.list-group .list-group-item {
+    padding: 1rem;
+    padding-right: 0;
+    background-color: inherit !important;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+
+.list-group .list-group-item a {
+    text-decoration: none;
+    color: #fff;
+    transition: color .3s, border .3s;
+    display: block;
+    padding: 1rem;
+}
+
+.list-group .list-group-item a:hover {
+    color: rgba(255, 255, 255, 0.5) !important;
+    border-right: 0.4rem solid #fb8500;
+}
+
+.noticias .card:hover p {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+

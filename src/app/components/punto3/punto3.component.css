@@ -1,0 +1,47 @@
+div.padding {
+    padding: 8rem 2rem 3.5rem;
+}
+
+.bg-naranja {
+    background-color: #fb8500;
+}
+
+form .btn {
+    width: 12rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.table {
+    border-color: #aaa;
+}
+
+.table th {
+    background-color: #ddd;
+}
+
+.table > :not(:first-child) {
+    border-top: none
+}
+
+.table thead {
+    border-top: 2px solid #111 !important;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 .25rem #fb8500;
+    border-color: #fb8500;
+}
+
+.btn-eliminar {
+    transition: background-color 0.5s ease;
+    color: #fff;
+}
+
+form .btn:hover, .btn-eliminar:hover {
+    background-color: #e85d04;
+}
+
+.total {
+    font-size: 2rem;
+}

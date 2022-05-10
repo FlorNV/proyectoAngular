@@ -23,7 +23,7 @@
               <input (change)="calcularTotal()" type="number" class="form-control" id="precio" [(ngModel)]="pasaje.precioPasaje" name="precioPasaje">
             </div>
           </div>
-          <label *ngIf="ingresados" class="col-12 form-label p-2 border text-center bg-light text-secondary total">Total a pagar: $ {{calcularTotal()}}</label>
+          <label *ngIf="ingresados" class="col-12 form-label p-2 border text-center bg-light text-secondary total">Total a pagar: {{ calcularTotal() | currency }}</label>
           <button (click)="registrarCompra()" type="submit" class="btn bg-naranja d-block mx-auto mt-4">REGISTRAR</button>
         </form>
     </div>
@@ -47,7 +47,7 @@
               <tr *ngFor="let p of pasajes">
                 <th scope="row">{{ p.id }}</th>
                 <td>{{ p.dniPasajero }}</td>
-                <td>$ {{ p.precioPasaje }}</td>
+                <td>{{ p.precioPasaje | currency }}</td>
                 <td>{{ p.categoriaPasajero | uppercase }}</td>
                 <td>{{ p.fechaCompra | date:'dd/MM/yyyy' }}</td>
                 <td>
@@ -76,7 +76,7 @@
                 <span>Menores</span>
               </div>
               <div class="col-6">
-                <span class="me-2">$ {{cacularTotalRecaudadoPorCategoria('m')}}</span>
+                <span class="me-2">{{ cacularTotalRecaudadoPorCategoria('m') | currency }}</span>
                 <span class="badge bg-secondary">{{contarPasajes('m')}} pasajes</span>
               </div>
             </div>
@@ -85,7 +85,7 @@
                 <span>Adultos</span>
               </div>
               <div class="col-6">
-                <span class="me-2">$ {{cacularTotalRecaudadoPorCategoria('a')}}</span>
+                <span class="me-2">{{ cacularTotalRecaudadoPorCategoria('a') | currency }}</span>
                 <span class="badge bg-secondary">{{contarPasajes('a')}} pasajes</span>
               </div>
             </div>
@@ -94,12 +94,12 @@
                 <span>Jubilados</span>
               </div>
               <div class="col-6">
-                <span class="me-2">$ {{cacularTotalRecaudadoPorCategoria('j')}}</span>
-                <span class="badge bg-secondary">{{contarPasajes('j')}} pasajes</span>
+                <span class="me-2">{{ cacularTotalRecaudadoPorCategoria('j') | currency }}</span>
+                <span class="badge bg-secondary">{{ contarPasajes('j') }} pasajes</span>
               </div>
             </div>
             <h5 class="card-title text-center">Total recaudado</h5>
-            <p class="card-text text-center total">$ {{calcularTotalRecaudado()}}</p>
+            <p class="card-text text-center total">{{ calcularTotalRecaudado() | currency}}</p>
           </div>
         </div>
       </div>

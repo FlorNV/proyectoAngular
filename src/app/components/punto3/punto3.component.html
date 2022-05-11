@@ -10,7 +10,7 @@
 
             <div class="col-6 mb-3">
               <label for="categoria" class="form-label">Categoria</label>
-              <select (change)="calcularTotal()" class="form-select" id="categoria" [(ngModel)]="pasaje.categoriaPasajero" name="categoriaPasaje">
+              <select (change)="mostrarTotal()" class="form-select" id="categoria" [(ngModel)]="pasaje.categoriaPasajero" name="categoriaPasaje">
                 <option value="" disabled>Seleciona Categoría</option>
                 <option value="m">Menor</option>
                 <option value="a">Adulto</option>
@@ -20,14 +20,14 @@
 
             <div class="col-6 mb-3">
               <label for="precio" class="form-label">Precio</label>
-              <input (change)="calcularTotal()" type="number" class="form-control" id="precio" [(ngModel)]="pasaje.precioPasaje" name="precioPasaje">
+              <input (change)="mostrarTotal()" type="number" class="form-control" id="precio" [(ngModel)]="pasaje.precioPasaje" name="precioPasaje">
             </div>
           </div>
           <label *ngIf="ingresados" class="col-12 form-label p-2 border text-center bg-light text-secondary total">Total a pagar: {{ calcularTotal() | currency }}</label>
           <div class="text-center">
-            <button (click)="registrarCompra()" type="submit" class="btn bg-naranja mt-4 mx-2">{{ seleccionado ? 'GUARDAR' : 'REGISTRAR' }}</button>
+            <button *ngIf="!seleccionado" (click)="registrarCompra()" type="submit" class="btn bg-naranja mt-4 mx-2">REGISTRAR</button>
+            <button *ngIf="seleccionado" (click)="actualizar()" type="submit" class="btn bg-naranja mt-4 mx-2">ACTUALIZAR</button>
             <button *ngIf="seleccionado" (click)="cancelar()" type="submit" class="btn bg-naranja mt-4 mx-2">CANCELAR</button>
-
           </div>
         </form>
     </div>

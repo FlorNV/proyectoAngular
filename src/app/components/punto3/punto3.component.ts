@@ -30,6 +30,7 @@ export class Punto3Component implements OnInit {
     this.pasaje.precioPasaje = this.calcularTotal();
     this.pasajeService.addPasaje(this.pasaje);
     this.pasaje = new Pasaje();
+    this.ingresados = false;
   }
 
   listarCompras(){
@@ -37,21 +38,39 @@ export class Punto3Component implements OnInit {
   }
 
   seleccionar(pasajeSeleccionado: Pasaje){
-    this.pasaje = pasajeSeleccionado;
     this.seleccionado = true;
+    this.pasaje = this.pasajeService.getPasaje(pasajeSeleccionado.id);
   }
 
   eliminar(pasajeSeleccionado: Pasaje){
     this.pasajeService.deletePasaje(pasajeSeleccionado);
   }
 
-  calcularTotal(): number{
+  actualizar(){
+    if(this.ingresados){
+      this.pasaje.precioPasaje = this.calcularTotal();
+    }
+    this.pasajeService.updatePasaje(this.pasaje);
+    this.pasaje = new Pasaje();
+    this.seleccionado = false;
+    this.ingresados = false;
+  }
+
+  cancelar(){
+    this.pasaje = new Pasaje();
+    this.seleccionado = false;
+    this.ingresados = false;
+  }
+
+  mostrarTotal(){
     if(this.pasaje.categoriaPasajero !== '' && this.pasaje.precioPasaje > 0){
       this.ingresados = true;
     }else{
       this.ingresados = false;
     }
+  }
 
+  calcularTotal(): number{
     let total: number = this.pasaje.precioPasaje;
     if(this.pasaje.categoriaPasajero === 'm'){
       total = total - total * 0.25;
@@ -71,10 +90,5 @@ export class Punto3Component implements OnInit {
 
   calcularTotalRecaudado(){
     return this.pasajeService.getTotal();
-  }
-
-  cancelar(){
-    this.pasaje = new Pasaje();
-    this.seleccionado = false;
   }
 }

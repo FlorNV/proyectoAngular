@@ -41,13 +41,13 @@ export class PasajeService {
 
   addPasaje(pasaje: Pasaje): void{
     if(pasaje.id == undefined){
-      pasaje.id = this.getId();
+      pasaje.id = this.getNuevoId();
       pasaje.fechaCompra = new Date();
       this.pasajes.push(pasaje);
     }
   }
 
-  getId(): number{
+  getNuevoId(): number{
     let max: number = 0;
     for(let pasaje of this.pasajes){
       if(pasaje.id > max){
@@ -59,14 +59,31 @@ export class PasajeService {
 
   getPasaje(id: number): Pasaje{
     let indexPasaje: number = this.pasajes.findIndex(pasaje => pasaje.id == id);
-    return this.pasajes[indexPasaje];
+    let pasajeEncontrado = new Pasaje();
+
+    pasajeEncontrado.id = this.pasajes[indexPasaje].id; 
+    pasajeEncontrado.dniPasajero = this.pasajes[indexPasaje].dniPasajero; 
+    pasajeEncontrado.categoriaPasajero = this.pasajes[indexPasaje].categoriaPasajero;
+    pasajeEncontrado.precioPasaje = this.pasajes[indexPasaje].precioPasaje;
+    pasajeEncontrado.fechaCompra = this.pasajes[indexPasaje].fechaCompra;
+    
+    return pasajeEncontrado;
   }
 
   deletePasaje(pasaje: Pasaje): void{
     let indexPasaje: number = this.pasajes.findIndex(p => p.id == pasaje.id);
     this.pasajes.splice(indexPasaje, 1);
+  }
 
-    // this.pasajes = this.pasajes.filter(p => p.id !== pasaje.id);
+  updatePasaje(pasaje: Pasaje): void{
+    this.pasajes.forEach(p => {
+      if(p.id === pasaje.id){
+        p.dniPasajero = pasaje.dniPasajero;
+        p.categoriaPasajero = pasaje.categoriaPasajero;
+        p.fechaCompra = pasaje.fechaCompra;
+        p.precioPasaje = pasaje.precioPasaje;
+      }
+    });
   }
 
   getPasajesPorCategoria(categoria: string): number{

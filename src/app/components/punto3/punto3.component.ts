@@ -12,12 +12,13 @@ export class Punto3Component implements OnInit {
   pasaje!: Pasaje;
   pasajes!: Array<Pasaje>;
   ingresados!: boolean;
-  // total!: number;
+  seleccionado!: boolean;
 
   constructor(private pasajeService: PasajeService) { 
     this.pasaje = new Pasaje();
     this.pasaje.categoriaPasajero = '';
     this.ingresados = false;
+    this.seleccionado = false;
     this.pasajes = new Array<Pasaje>();
     this.pasajes = this.listarCompras();
   }
@@ -37,6 +38,7 @@ export class Punto3Component implements OnInit {
 
   seleccionar(pasajeSeleccionado: Pasaje){
     this.pasaje = pasajeSeleccionado;
+    this.seleccionado = true;
   }
 
   eliminar(pasajeSeleccionado: Pasaje){
@@ -69,5 +71,10 @@ export class Punto3Component implements OnInit {
 
   calcularTotalRecaudado(){
     return this.pasajeService.getTotal();
+  }
+
+  cancelar(){
+    this.pasaje = new Pasaje();
+    this.seleccionado = false;
   }
 }

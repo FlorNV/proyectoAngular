@@ -38,6 +38,10 @@ input:focus, select:focus {
     color: #fff;
 }
 
+button > i {
+    font-size: 1.2rem;
+}
+
 form .btn:hover, .btn-eliminar:hover {
     background-color: #e85d04;
 }
